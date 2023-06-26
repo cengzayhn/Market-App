@@ -1,0 +1,23 @@
+.sidebar_container{
+    padding-top: 50px;
+    padding-left: 125px;
+}
+.sidebar_sizes{
+    height: 30px;
+    width: 35px;
+    background-color: #ECECEC;
+    border-radius: 50%;
+    display: inline-block;
+    font-weight: lighter;
+    font-size: 12px;
+    margin: 5px;
+}
+.sidebar_sizes:hover{
+    cursor: pointer;
+    border: 1px solid black;
+}
+.sidebar_text{
+    font-weight: bold;
+    margin-bottom: 13px;
+    margin-left: -95px;
+}

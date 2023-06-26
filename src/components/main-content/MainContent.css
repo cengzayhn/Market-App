@@ -1,0 +1,37 @@
+.main_container{
+
+}
+.main_card{
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 30px;
+    cursor: default;
+    outline: none;
+}
+
+.main_image{
+    height: 400px;
+    width:100%;
+    object-fit: cover;
+    margin-right: 5px;
+}
+.main_text{
+    border-bottom: 1px solid #EABF00;
+}
+.main_button{
+    font-size: 15px;
+    color: white;
+    background-color: black;
+    height: 40px;
+    width: 100%;
+    display: inline-block;
+    margin-top: 5px;
+}
+.main_button:hover{
+    cursor:pointer;
+}
+
+.main_card:hover .main_button{
+    transition-delay: 0.03s;
+    background-color: #D0AA04;
+}
