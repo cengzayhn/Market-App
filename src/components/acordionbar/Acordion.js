@@ -16,7 +16,7 @@ const Acordion=(props)=>{
             {isShown&&props.show?( 
                 <>
                     <span onClick={handleClick}><EastRoundedIcon className="acordion_rightarrow"></EastRoundedIcon></span>
-                    <AcordionSidebar itemList={props.itemList} addList={props.addList}  mySize={props.mySize} changeSize={props.changeSize}                  switchVal={props.switchVal} productPrice={props.productPrice} updatePrice={props.updatePrice}/> 
+                    <AcordionSidebar itemList={props.itemList} addList={props.addList}  mySize={props.mySize} changeSize={props.changeSize}                  switchVal={props.switchVal} productPrice={props.productPrice} updatePrice={props.updatePrice} countries={props.countries}/> 
                 </>
             ):(
                 <>

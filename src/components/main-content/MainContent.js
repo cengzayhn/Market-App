@@ -14,6 +14,9 @@ import Product from '../product/Product';
 
 const MainContent =(props)=>{
  
+    
+
+
     const tempDataArray = [
         {
             "foto":foto1,
@@ -72,16 +75,17 @@ const MainContent =(props)=>{
             let newPrice = price;
             let newitemName = code;
         }
-
+    
+        console.log(props.countries)
     return(
         <div>
             <div className="main_container">
                 <Grid container>
-                        {tempDataArray.map((item,index)=>(
+                {props.countries.map((country)=>(
                             <Grid item xs={3}>
-                                <div key={index}>
-                                    {updateData(item.foto, item.productName, item.price,item.newitemName)}
-                                    <Product newPhoto={item.foto} newProduct={item.productName} newPrice={item.price} newitemName={item.itemname} addList={props.addList}/>
+                                <div key={country.name.common}>
+                                    {updateData(country.flag, country.name.common, country.name.common,country.name.common)}
+                                    <Product newPhoto={country.flags.png} newProduct={country.name.common} newPrice={country.name.common} newitemName={country.name.common} addList={props.addList}/>
                                 </div>
                             </Grid>
                         ))

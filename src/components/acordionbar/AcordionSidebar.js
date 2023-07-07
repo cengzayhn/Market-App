@@ -35,7 +35,7 @@ const AcordionSidebar = (props) => {
           </>
         ):(
           <>
-            <Cart itemList={props.itemList} addList={props.addList} mySize={props.mySize} changeSize={props.changeSize} switchVal={props.switchVal}          productPrice={props.productPrice} updatePrice={props.updatePrice}/>
+            <Cart itemList={props.itemList} addList={props.addList} mySize={props.mySize} changeSize={props.changeSize} switchVal={props.switchVal}          productPrice={props.productPrice} updatePrice={props.updatePrice} countries={props.countries}/>
             <button onClick={handleBuybutton} className='acordion_button'>Buy Now</button>  
           </>
         )}
