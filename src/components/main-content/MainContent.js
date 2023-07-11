@@ -8,13 +8,24 @@ import foto5 from '../../images/foto-batman.png';
 import foto6 from '../../images/foto-blue.png';
 import foto7 from '../../images/foto-loose.png';
 import foto8 from '../../images/foto-ringer.png';
-
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
  
 import Product from '../product/Product';
+import { getProducts } from '../../redux/productSlice';
+
 
 const MainContent =(props)=>{
  
+
+    const dispatch = useDispatch();
+    const myProducts = useSelector(state=>state.products.products)
+    useEffect(()=>{
+        dispatch(getProducts());
+    },[dispatch])
     
+
 
 
     const tempDataArray = [
@@ -69,23 +80,23 @@ const MainContent =(props)=>{
     ]
     
         
-        const updateData=(foto,product,price,code)=>{
+        const updateData=(foto,product,price,code)=>{       
             let newPhoto = foto;
             let newProduct = product;
             let newPrice = price;
             let newitemName = code;
         }
     
-        console.log(props.countries)
+
     return(
         <div>
             <div className="main_container">
                 <Grid container>
-                {props.countries.map((country)=>(
+                {myProducts.map((product)=>(
                             <Grid item xs={3}>
-                                <div key={country.name.common}>
-                                    {updateData(country.flag, country.name.common, country.name.common,country.name.common)}
-                                    <Product newPhoto={country.flags.png} newProduct={country.name.common} newPrice={country.name.common} newitemName={country.name.common} addList={props.addList}/>
+                                <div key={product.id}>
+                                    {updateData(product.image, product.title, product.price,product.title)}
+                                    <Product newPhoto={product.image} newProduct={product.title} newPrice={product.price} newitemName={product.title} addList={props.addList}/>
                                 </div>
                             </Grid>
                         ))

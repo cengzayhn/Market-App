@@ -4,10 +4,23 @@ import SideBar from "./sidebar/SideBar";
 import MainContent from "./main-content/MainContent";
 import Acordion from "./acordionbar/Acordion";
 import axios from 'axios';
-import {configureStore } from '@reduxjs/toolkit';
+import {useDispatch, useSelector} from 'react-redux'
+import { getProducts } from "../redux/productSlice";
+import {changeState} from "../redux/switchSlice";
+
 
 function Template(){
 
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(getProducts())
+        dispatch(changeState())     
+    },[dispatch])
+
+    
+    const {products} = useSelector(state=>state.products)
+    //console.log(products, "products")
     
     const[itemList, setItemList] = useState([]);
     const[show, setShow] = useState(false);

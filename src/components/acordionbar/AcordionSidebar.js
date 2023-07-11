@@ -3,9 +3,26 @@ import './Acordion.css';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
 import {CardContent} from "@mui/material";
 import Cart from '../../_cart/Cart';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { getProducts } from '../../redux/productSlice';
+
 
 const AcordionSidebar = (props) => {
+
+  const dispatch = useDispatch();
+  const myProducts = useSelector(state=>state.products.products);
+  useEffect(()=>{
+    dispatch(getProducts());
+  },[dispatch])
+
+
+
   const[success, setSuccess] = useState(false);
+
+  
+
   
   const items = []
   props.itemList.map((item)=>{
